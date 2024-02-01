@@ -1,0 +1,42 @@
+"""CHAPTER 1 - PART 1"""
+
+def bitwise_operations(str1, str2):
+    n = len(str1)
+    
+    # Bitwise AND
+    bitwise_and = ""
+    for i in range(n):
+        if str1[i] == '1' and str2[i] == '1':
+            bitwise_and += '1'
+        else:
+            bitwise_and += '0'
+    
+    # Bitwise OR
+    bitwise_or = ""
+    for i in range(n):
+        if str1[i] == '1' or str2[i] == '1':
+            bitwise_or += '1'
+        else:
+            bitwise_or += '0'
+    
+    # Bitwise XOR
+    bitwise_xor = ""
+    for i in range(n):
+        if str1[i] != str2[i]:
+            bitwise_xor += '1'
+        else:
+            bitwise_xor += '0'
+    
+    return bitwise_and, bitwise_or, bitwise_xor
+
+bit_str1 = input("Enter the first binary string: ")
+bit_str2 = input("Enter the second binary string: ")
+
+if len(bit_str1) != len(bit_str2):
+    print("Error: The lengths of the binary strings are not equal.")
+else:
+    and_result, or_result, xor_result = bitwise_operations(bit_str1, bit_str2)
+
+    print("Bitwise AND:", and_result)
+    print("Bitwise OR:", or_result)
+    print("Bitwise XOR:", xor_result)
